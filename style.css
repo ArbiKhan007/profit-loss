@@ -1,0 +1,65 @@
+:root {
+  --main-orange: #ff9472;
+  --main-pink: #f2709c;
+  --main-blue: #0083b0;
+  --secondary-blue: #00b4db;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  padding: 100px;
+  margin: 0;
+  background: var(--main-orange); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    var(--main-orange),
+    var(--main-pink)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--main-orange),
+    var(--main-pink)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.heading {
+  font-size: 2.8rem;
+  margin: 12px 0;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid var(--main-blue);
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+#submitBtn {
+  padding: 12px;
+  border: 2px solid var(--main-blue);
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+input:focus {
+  border: 2px solid var(--secondary-blue);
+}
+
+.result {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+}
