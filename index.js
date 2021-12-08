@@ -11,17 +11,43 @@ submitBtn.addEventListener("click", function () {
   let stockQuanVal = parseFloat(stockQuan.value);
 
   if (currentPriceVal > initialPriceVal) {
+    let profAbs = profitAbs(
+      currentPriceVal,
+      initialPriceVal,
+      stockQuanVal
+    ).toFixed(2);
+    let profPercent = profitPercent(
+      currentPriceVal,
+      initialPriceVal,
+      stockQuanVal
+    ).toFixed(2);
+
     resOutput.innerText =
       "Woohoo!! Your Profit is " +
-      profitAbs(currentPriceVal, initialPriceVal, stockQuanVal) +
+      profAbs +
       " and Percentage Profit is " +
-      profitPercent(currentPriceVal, initialPriceVal, stockQuanVal);
+      profPercent +
+      "%";
+
+    //change the color
+    resOutput.style.color = "green";
   } else if (initialPriceVal > currentPriceVal) {
+    let lAbs = lossAbs(currentPriceVal, initialPriceVal, stockQuanVal);
+    let lPercent = lossPercent(
+      currentPriceVal,
+      initialPriceVal,
+      stockQuanVal
+    ).toFixed(2);
+
     resOutput.innerText =
       "Oh No!! Your loss is  " +
-      lossAbs(currentPriceVal, initialPriceVal, stockQuanVal) +
+      lAbs +
       "  and Percentage Loss is " +
-      lossPercent(currentPriceVal, initialPriceVal, stockQuanVal);
+      lPercent +
+      "%";
+
+    //change the color
+    resOutput.style.color = "red";
   } else {
     resOutput.innerText = "Perfectly Balanced as all things should be.";
   }
